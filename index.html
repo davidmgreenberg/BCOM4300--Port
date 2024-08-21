@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6d20af9d4c.js" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+           emailjs.init("pmE2Ru5hNBAHnk6tq");
+        })();
+     </script>
+    
+      
+</head>
+<body>
+    <header>
+		<nav class="sticky-nav">
+            <div class="nav__container">
+                <img id='personal-logo' src="./resources/David(1).png" alt="">
+            </div>
+            <ul>
+                <li><a class='link__hover-effect' href='#top' onClick="toggleModal()">Contact</a></li>
+                <li><a class='link__hover-effect' href="https://github.com/davidmgreenberg/DG_E-Portfolio">Source Code</a></li>
+            </ul>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                  const buttons = document.querySelectorAll('.dropdown-button');
+                  buttons.forEach((button) => {
+                    const list = button.nextElementSibling;
+                    button.addEventListener('click', () => {
+                      list.style.display = (list.style.display === 'none') ? 'block' : 'none';
+                    });
+                  });
+                });
+              </script>
+              </div>   
+        </nav>
+	</header>
+	    <section id="title" onmousemove="moveBackground(event)">
+	    	<div class="title_container">
+                <div class="intro_container">
+                    <h1 class="title_intro"><div id="greetings"></div><b class="orange">I'm David</b></h1>
+                    <p class="title_intro-para">
+                        I am a <b class="orange">senior year finance</b> Student with a passion for <b class="orange">financial markets.</b>
+                        <br>
+                        <br>
+                        I enjoy using quantitiative data analytics to understand the financial markets and learn how indidivuals make rational decisions in finance.<br>
+
+                        <br>
+                        In my free time, I enjoy rock climbing, weight lifting, and spending time with my family (and my dog of course).
+                        <br>
+                        <br> Here's a bit more <b><a class='about_me orange link__hover-effect' onclick="toggleModal()">About me.</a></b>
+                    </p>
+                    <div class="social__list">
+                        <a href="https://www.linkedin.com/in/david-g-422116222/" target="_blank" class="social__link click"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/davidmgreenberg" target="_blank" class="social__link click"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                    <div class ="header_img">
+                        <img id ="my-face"  src="./resources/headshot.jpg"></img>
+                    </div>
+            </div>
+            <script>
+            var greetings = ["Hello,", "Greetings,", "Welcome!"];
+            var randomNumber = Math.floor(Math.random() * greetings.length);
+            document.getElementById("greetings").innerHTML = greetings[randomNumber];
+            </script>
+            <a href="#projects" class="scroll">
+                <div class="scroll__icon click">  </div>
+            </a>
+                
+	    </section>
+    <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about">Here is a bit about me.</h3>
+            <h4 class="modal__sub-title modal__sub-title--about">Financial Analyst</h4>
+            <p class="modal__para">I'm a 21 year old student who is always trying to learn more about solving real world problems. I enjoy testing various hypotheses through financial models and back tests. I also love high adrenaline activities.
+                <br>
+                <b class="orange">As a student, I am always looking for new avenues to grow my skill set and knowledge.</b>
+            <div class="modal__languages">
+                <img class = "dunes" src="./resources/Dunes.png">
+                <img class = "dunes" src="./resources/Climb.jpeg">
+            </div>
+        </div>
+        <div class="modal__half modal__contact">
+            <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">
+                Let's have a chat!
+            </h3>
+            <h4 class="modal__sub-title modal__sub-title--contact">
+                I'm currently open to new oppertunities.
+            </h4>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" ></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input class="input" name="user_email" type="email" ></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" ></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">Send it my way</button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! Looking forward to speaking to you soon.
+            </div>
+        </div>
+    </div>
+    
+
+	<section id="writing">
+
+        
+        <h3 id = 'resume' class="h3_resume">Resume</h3>
+        <div class="writing_media">
+            <img class='my_resume' src="./resources/Resume.png" alt="your-image-alt" />
+            <div class="writing_buttons">
+                <a download href="./resources/Resume.png" class="link__hover-effect writingbtn btn-download">
+                    <i class="fas fa-download"></i>
+                    Download
+                </a>
+                <a href="https://www.linkedin.com/in/david-greenberg-422116222/" class="link__hover-effect writingbtn btn-linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+            </div>
+          </div>
+          <div id='projects1' class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    My Near-Term <span class="orange">Goals</span>
+                </h1>
+                <div class="project_section">
+                    <div class="project__list">
+                        <ul class = "goal-classes">
+                            <li class = "goal-list">
+                                <i class="fa-solid fa-user-graduate goalzz"></i>
+                                <p class = "goalz">Finish my Finance undergraduate degree in May 2025. This will allow me to work post-graduation and look toward higher education opportunities.</p>
+                            </li>
+                            <li class = "goal-list">
+                                <i class="fa-solid fa-building-columns goalzz"></i>
+                                <p class = "goalz">Take my full time offer at the Teacher Retirement System of Texas. Continue to learn about the financial markets.</p>
+                            </li>
+                            <li class = "goal-list">
+                                <i class="fa-solid fa-house goalzz"></i>
+                                <p class = "goalz">Move to Austin after graduating and stay in the Finance industry. Enjoy outdoor activities, live music, and spending time with my family in the city.</p>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+        <div id='projects1' class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here Are Some Of My <span class="orange">Writings & Certifications</span>
+                </h1>
+                <div class="project_section">
+                    <div class="project__list">
+                        <div class="project">
+                            <div class="project__wrapper">
+                                <img class = "project__img" src="./resources/ftx.teaser.png" alt="">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        The Collapse of FTX
+                                    </h3>
+                                    <h4 class="project__description--sub-title">
+                                        Sam Bankman Fried Charged for Crypto Ponzi Scheme
+                                    </h4>
+                                    <p class="project__description--para">
+                                    This informative essay I wrote about the court case shows my competency as a writing through strong analytical information backed with real legal clauses. In this paper, I discuss the wide impacting collapse of FTX, a giant in the cryptospace. In the document, I detail how I expected the future court case to go.                                     </p>
+                                    <div class="project__description--links">
+                                        <figure class="modal__language"><a href="./resources/DavidGreenberg_BLAW2301_WritingAssignment+(1).pdf" class="project__description--link">
+                                            <i class="fa-solid fa-up-right-from-square"><span class="asaiicon language__name">Open</span></i>
+                                        </a></figure>
+                                        <figure class="modal__language"><a href="./resources/DavidGreenberg_BLAW2301_WritingAssignment+(1).pdf" download class="project__description--link">
+                                            <i class="fa fa-download"><span class="assiicon language__name">Download</span></i></figure>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <div class="project__wrapper">
+                                <img class = "project__img" src="./resources/cmsa.png" alt="">
+                                <div class="project__wrapper--bg"></div>
+                                <div class="project__description">
+                                    <h3 class="project__description--title">
+                                        Capital Markets & Securities Analyst Certification
+                                    </h3>
+                                    <p class="project__description--para">
+                                        Learned techniques used to value and apply nearly all financial instruments in the markets. Consisted of courses in futures, options, swaps, fixed income, commodities, and more.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='projects1' class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    One Minute <span class="orange">Elevator Pitch</span>
+                </h1>
+                <div class="project_section boo">
+                    <video width="600" height="360" controls>
+                        <source src="./resources/Bcom4300video.mp4" type="video/mp4">
+                    </video>    
+                </div>
+            </div>
+        </div>
+
+
+	<section id="conclusion">
+		<footer class="footer_wrapper">
+            <p class="footer_p">Please <a href='#top' onclick='toggleModal()' class="orange">contact me</a> if you have any further information!</p>
+            <a href="#top" class="footer-btn social__link click">Top</a>
+        </footer>
+	</section>
+
+</body>
+<script>
+    const images = document.querySelectorAll('.emailimg');
+const btn = document.querySelector('.email_btn')
+let activeImage = 0
+ function switchImage() {
+     images[activeImage].classList.remove('active');
+     activeImage = (activeImage === 0) ? 1 : 0;
+     images[activeImage].classList.add('active');
+ }
+</script>
+
+<script>
+    
+function contact(event) {
+    event.preventDefault();
+    const loading = document.querySelector('.modal__overlay--loading')
+    const success = document.querySelector('.modal__overlay--success')
+    loading.classList += ' modal__overlay--visible'
+    emailjs
+    .sendForm(
+        'service_w7454r5',
+        'template_wuls7zo',
+        event.target,
+        'LkdJZdKsXT5rhtj85'
+    ).then(() => {
+        loading.classList.remove('modal__overlay--visible')
+        success.classList += ' modal__overlay--visible'
+    }) .catch(() => {
+        loading.classList.remove('modal__overlay--visible')
+       alert(
+        "This email service is temporarily unavailable. Contact me on other platforms!"
+       )
+    })
+}
+
+
+let isModalOpen = false;
+
+function toggleModal() {
+    if (isModalOpen) {
+        isModalOpen=false;
+        return document.body.classList.remove("modal--open");
+        
+    }
+    isModalOpen = true;
+ document.body.classList += " modal--open"   
+}
+</script>
+<script>
+    var greetings = [
+      { text: "Hello", language: "English" },
+      { text: "Bonjour", language: "French" },
+      { text: "Hola", language: "Spanish" },
+      { text: "Konnichiwa", language: "Japanese" },
+      { text: "Guten Tag", language: "German" },
+      { text: "Ciao", language: "Italian" },
+      { text: "Annyeonghaseyo", language: "Korean" },
+      { text: "Salam", language: "Arabic" },
+      { text: "Nǐ hǎo", language: "Chinese" },
+      { text: "Sawubona", language: "Zulu" }
+    ];
+
+    var currentGreetingIndex = 0;
+
+    function updateGreeting() {
+      var randomIndex = Math.floor(Math.random() * greetings.length);
+      currentGreetingIndex = randomIndex;
+      var greeting = greetings[currentGreetingIndex];
+      console.log("Selected greeting: " + greeting.text + " (" + greeting.language + ")");
+      document.getElementById("world_lang").innerHTML = greeting.text + " (" + greeting.language + ")";
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        updateGreeting();
+        setInterval(updateGreeting, 5000);
+    });
+</script>
+</html>
